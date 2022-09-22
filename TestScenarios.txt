@@ -1,0 +1,116 @@
+Tests Scenarios
+
+1 - Verify that I am redirected to the forms page when I enter the asked information
+
+Verify that I am redirected to the forms page when I enter the information
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter the number of people who live in his house
+And insert a valid ZIP code
+When he clicks "Get Started"
+Then it should be redirected to the forms page 
+
+2 - Verify that I can enter the information manually 
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And manually enter (by keyboard) the number of people who live in my house manually
+And manually enter (by keyboard) a valid ZIP code
+And he clicks "Get Started"
+Then it should be redirected to the forms page 
+
+
+3 - Verify that I can enter the information by clicking the arrows
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter, by clicking on the arrows, the number of people who live in his house manually
+And insert, by clicking on the arrows, a valid ZIP code
+And  he clicks "Get Started"
+Then it is redirected to the forms page
+
+4 - Verify that I am not redirected to the forms page without entering any information
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And click "Get Started"
+Then you get 2 error messages:
+  "Please enter a valid number of people."
+  "Please enter a valid five-digit ZIP Code."
+
+5 - Verify that I can click on the link inside About
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And click on the "Assumptions and References page." link
+Then you are redirected to the Climate Change page
+
+6 - Verify that I can click on the link inside the How To about fuel economy
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And click on the link "fueleconomy.gov" link
+Then it is redirected to the Fuel Economy page 
+
+7 - Verify that I can click on the link inside How To about How to Calculate Your MPG
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And click on the link "calculate your car's current efficiency" link
+Then you are redirected to the How to Calculate Your MPG page
+
+8 - Verify that I can download the excel spreadsheet that is provided
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And click on the "Calculator in Excel" link
+Then the .csv is downloaded
+
+9 - Verify that if I enter negative numbers on the number of people field, I get a error message
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter a negative number on the number of people field
+And insert a valid ZIP code
+And it clicks "Get Started"
+Then you get the following error messages: "Please enter a valid number of people." 
+
+10 - Verify that if I enter a negative simbol plus 4 numbers on the ZIP code field, I get a error message
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter a negative simbol and 4 random numbers like '-0000'
+And insert a valid number of people
+And it clicks "Get Started"
+Then you get the following error messages: "Please enter a valid five-digit ZIP Code." 
+
+10 - Verify that if I enter a negative simbol plus 5 or more numbers on the ZIP code field, I get a error message
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter a negative simbol and 5 or more random numbers like '-00000'
+And insert a valid number of people
+And it clicks "Get Started"
+Then you get the following error messages: "We could not find your ZIP code in our database. Please try again, or you may continue using the calculator with a default value. Using the default will give you average estimates.
+I will use the default ZIP code." 
+
+11 - Verify that if I enter an invalid ZIP code and give a check inside the error message I'll be redirect to the forms page
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter a negative simbol and 5 or more random numbers like '-00000'
+And insert a valid number of people
+And it clicks "Get Started"
+And you get the following error messages: "We could not find your ZIP code in our database. Please try again, or you may continue using the calculator with a default value. Using the default will give you average estimates.
+I will use the default ZIP code." 
+And click the checkbox inside the error message
+Then it should be redirected to the forms page
+
+12 - Verify that I am after filling in all the data, generates a report
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter the number of people who live in his house
+And insert the ZIP code
+When he clicks "Get Started"
+And it is redirected to the detail page
+And fills in all required data within Home Energy, Transportation and Waste
+Then a report is generated of the amount of carbon that is generated by the user's home
+
+13 - Verify that after not filling in any data within the detail page, it generates a report anyway
+
+Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+And enter the number of people who live in his house
+And insert the ZIP code
+When he clicks "Get Started"
+And it is redirected to the detail page
+And it does not fill in any of the data requested within Home Energy, Transportation and Waste
+Then a report is generated of the amount of carbon that is generated by the user's home 

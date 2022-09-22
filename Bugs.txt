@@ -1,0 +1,28 @@
+Bugs Found
+
+1 - When clicking on any of the 3 links on the homepage, it disappears and reappears after one click
+
+Steps to reproduce 1:
+    Go to https://www3.epa.gov/carbon-footprint-calculator/
+    Click on the "Assumptions and References page."
+    Verify that the link disappears from the screen
+
+Steps to reproduce 2:
+    Go to https://www3.epa.gov/carbon-footprint-calculator/
+    Click on the link "fueleconomy.gov"
+    Verify that the link disappears from the screen
+
+Steps to reproduce 3:
+    Go to https://www3.epa.gov/carbon-footprint-calculator/
+    Click on the link "calculate your car's current efficiency"
+    Verify that the link disappears from the screen
+
+2 - If a negative numbers in inputed the report is printed anyway.
+
+Steps to reproduce 4:
+    Go to https://www3.epa.gov/carbon-footprint-calculator/
+    Input 1 on number of people in your Household field and 12345 on ZIP Code field
+    Press "get started" button 
+    Input a negative number on Natural Gas, Electricity, Fuel Oil, Propane fields 
+    Press Continue to Transportation, then Continue to Waste, Continue to Report 
+    Verify that the report is printed 
