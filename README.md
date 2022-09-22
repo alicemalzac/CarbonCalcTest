@@ -1,4 +1,4 @@
-#Carbon Calculador Test Automation Project 
+## Carbon Calculador Test Automation Project 
 
 Web automation test made based on EPA’s Carbon Footprint Calculator. 
 
