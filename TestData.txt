@@ -1,0 +1,6 @@
+Test data
+
+1- It should be tested with all possible zip codes in the US
+2- It should be tested with the limits zip codes in the US, the first and the last, to verify the results
+3- It should be verify the calculations must be checked
+

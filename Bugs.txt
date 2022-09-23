@@ -26,3 +26,30 @@ Steps to reproduce 4:
     Input a negative number on Natural Gas, Electricity, Fuel Oil, Propane fields 
     Press Continue to Transportation, then Continue to Waste, Continue to Report 
     Verify that the report is printed 
+
+3 - When you try to select a field before entering your an average monthly bill for your Primary Heating Source the error message repeates forever
+
+Steps to reproduce 5:
+    Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+    And enter the number of people who live in his house
+    And insert the ZIP code
+    When he clicks "Get Started"
+    And it is redirected to the detail page
+    And select your Primary Heating Source as Natural gas 
+    And don't fill up your average monthly bill for your Primary Heating Source 
+    And try to select an option for Furnace or boiler inside of ENERGY STAR Products
+    Verify that an error message appears: "Error: Please enter your an average monthly bill for your Primary Heating Source, Natural Gas first."
+    And enter your average monthly bill for your Primary Heating Source 
+    Verify that the same error message appears anyaway
+
+4 - Inside of Natural Gas, Fuel Oil and Propane fields you can fill up with "e"
+
+Steps to reproduce 6:
+    Given that the user accesses the page https://www3.epa.gov/carbon-footprint-calculator/
+    And enter the number of people who live in his house
+    And insert the ZIP code
+    When he clicks "Get Started"
+    And it is redirected to the detail page
+    And inside of Natural Gas, Fuel Oil and Propane fields fill up with "e"
+    Then verify it can happen
+
